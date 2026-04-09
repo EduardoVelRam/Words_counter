@@ -1,10 +1,10 @@
 import streamlit as st
 import re
 
-st.title("Contador de palabras")
+st.title("Words counter")
 
 # Entrada de texto
-texto = st.text_area("Ingresa tu texto aquí:")
+texto = st.text_area("Paste the text here:")
 
 def contar_palabras(texto):
     # Usamos regex para separar palabras (evita contar espacios múltiples)
@@ -12,9 +12,9 @@ def contar_palabras(texto):
     return len(palabras)
 
 # Botón
-if st.button("Contar palabras"):
+if st.button("Count words"):
     if texto.strip() == "":
-        st.warning("Por favor ingresa algún texto.")
+        st.warning("Please enter some text.")
     else:
         total = contar_palabras(texto)
-        st.success(f"El texto tiene {total} palabras.")
+        st.success(f"The text has {total} words.")
