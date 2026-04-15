@@ -3,18 +3,18 @@ import re
 
 st.title("Words counter")
 
-# Entrada de texto
-texto = st.text_area("Paste the text here:")
+# Text entry
+text = st.text_area("Paste the text here:")
 
-def contar_palabras(texto):
-    # Usamos regex para separar palabras (evita contar espacios múltiples)
-    palabras = re.findall(r'\b\w+\b', texto)
-    return len(palabras)
+def contar_palabras(text):
+    # regex for split words (avoid counting multiple spaces)
+    words = re.findall(r'\b\w+\b', text)
+    return len(words)
 
 # Botón
 if st.button("Count words"):
-    if texto.strip() == "":
+    if text.strip() == "":
         st.warning("Please enter some text.")
     else:
-        total = contar_palabras(texto)
+        total = contar_palabras(text)
         st.success(f"The text has {total} words.")
